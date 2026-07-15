@@ -32,6 +32,7 @@ find-mail-fldr "Project Alpha"
 ```
 
 ## Examples
+```bash
 % find-mail-fldr bible
 [On My Mac]: Rockwall Bible Church
 [On My Mac]: Christian Lists/Blue Letter Bible
@@ -55,6 +56,7 @@ find-mail-fldr "Project Alpha"
 [iCloud]: INBOX
 [AOL BrCrk]: INBOX
 [AOL BobSC]: INBOX
+```
 
 ## License
 MIT License - Free to use and modify.
