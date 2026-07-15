@@ -21,6 +21,8 @@ find "$mailfldr" -type d -iname "*$1*.mbox" 2>/dev/null \
     # Split the account/ID string from the actual folder path
     account="${clean_path%%/*}"
     # Try to find the account NAME in the $account/[<name>].mbox folder
+    # I find these account folders in my Tahoe 26.5.2 /Library/Mail/<acct-id>/ folders.
+    # Back on Mojave they were only present on my gmail accounts.
     for acctname in "$mailfldr/$account/"/*\[*; do
         acctname="${acctname#$mailfldr/$account//}"
         acctname="${acctname//.mbox}"
