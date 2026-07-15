@@ -31,5 +31,30 @@ find-mail-fldr "Alpha"
 find-mail-fldr "Project Alpha"
 ```
 
+## Examples
+% find-mail-fldr bible
+[On My Mac]: Rockwall Bible Church
+[On My Mac]: Christian Lists/Blue Letter Bible
+[On My Mac]: Christian Lists/Back to the Bible
+[On My Mac]: Christian Lists/Bible Framework
+[On My Mac]: Christian Lists/Redeemer Bible Church
+[On My Mac]: Christian Lists/Online Bible
+[On My Mac]: Christian Lists/Apostolic Bible - Charles Vanderpool
+[On My Mac]: Christian Lists/Messianic Bible
+[On My Mac]: Christian Lists/Bible Gateway
+[On My Mac]: Christian Lists/Bible Analyzer
+[On My Mac]: Christian Lists/BibleMemory.com
+
+% find-mail-fldr "dr dobbs"
+[iCloud]: Dr Dobbs
+
+% find-mail-fldr inbox
+[txbobsc]: INBOX
+[yahoo]: INBOX
+[Gmail]: INBOX
+[iCloud]: INBOX
+[AOL BrCrk]: INBOX
+[AOL BobSC]: INBOX
+
 ## License
 MIT License - Free to use and modify.
