@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+### find-mail-fldr: find particular mail folder in the hierarchy
+
+mailfldr=~/Library/Mail/V10
+
+# Ensure the directory exists before proceeding
+if [ ! -d "$mailfldr" ]; then
+    echo "Error: Mail directory not found at $mailfldr" >&2
+    exit 1
+fi
+
+# Search directly from the root V10 folder to catch all subdirectories
+find "$mailfldr" -type d -iname "*$1*.mbox" 2>/dev/null \
+| while read -r fldrpath; do
+    # Remove the mailfldr path to simply list folders and mailbox
+    clean_path="${fldrpath#$mailfldr/}"
+
+    # Remove the .mbox extension from mailbox file
+    clean_path="${clean_path//.mbox/}"
+   
+    # Split the account/ID string from the actual folder path
+    account="${clean_path%%/*}"
+    # Try to find the account NAME in the $account/[<name>].mbox folder
+    for acctname in "$mailfldr/$account/"/*\[*; do
+        acctname="${acctname#$mailfldr/$account//}"
+        acctname="${acctname//.mbox}"
+        [ -n "$acctname" ] && account="$acctname"       
+    done
+    
+    # split off the folder_hierarchy after the account number
+    folder_hierarchy="${clean_path#*/}"
+    
+    # Output formatted as "Account ID: Folder/SubFolder/Target"
+    echo "$account: $folder_hierarchy" | grep -i --color "$1"
+done
