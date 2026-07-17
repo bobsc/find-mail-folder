@@ -7,8 +7,9 @@ mailfldr=~/Library/Mail/V10
 if [ $# -ne 1 ]; then
     cat << EOF
 Usage: find-mail-fldr <pattern>
-    <pattern> will be matched against mailbox folders in $mailfldr.
-    All folders that match lsted with the complete path from mail account.
+    <pattern> will be matched against mailbox folders in ${mailfldr}.
+    All folders that match the pattern wiil be listed
+    with the complete path from mail account.
 
 Example:
     % find-mail-fldr "Tara Ro"
