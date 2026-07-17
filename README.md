@@ -1,7 +1,7 @@
 # find-mail-folder
-Find a particular mail folder in the hiearchy of accounts and folders in Mac Mail
+Find a particular mail folder in the hierarchy of accounts and folders in Mac Mail
 
-A lightweight, blazing-fast Bash utility to instantly find specific email folders hidden deep within the Apple Mail directory hierarchy on macOS. 
+A lightweight, blazing-fast Bash utility to instantly find specific email folders hidden deep within the Apple Mail directory hier`archy` on macOS. 
 
 This tool completely bypasses broken or corrupted native Apple Mail / Spotlight search indexing by querying the backend `.mbox` structure directly.
 
@@ -21,6 +21,10 @@ This tool completely bypasses broken or corrupted native Apple Mail / Spotlight 
    ```bash
    mv find-mail-fldr /usr/local/bin/
    ```
+## Requirements
+
+Currently only tested on Tahoe 26.5.2, with Mail 16.0.
+This combination stores the mailboxes in /Users/<user>/Library/Mail/V10.
 
 ## Usage
 
