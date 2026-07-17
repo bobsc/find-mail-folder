@@ -3,6 +3,22 @@
 
 mailfldr=~/Library/Mail/V10
 
+# check if we have a pattern
+if [ $# -ne 1 ]; then
+    cat << EOF
+Usage: find-mail-fldr <pattern>
+    <pattern> will be matched against mailbox folders in $mailfldr.
+    All folders that match lsted with the complete path from mail account.
+
+Example:
+    % find-mail-fldr "Tara Ro"
+    [On My Mac]: Patriotism/Tara Ross TDIH
+    [AOL BobSC]: Tara Ross TDIH
+EOF
+    
+    exit 1
+fi
+
 # Ensure the directory exists before proceeding
 if [ ! -d "$mailfldr" ]; then
     echo "Error: Mail directory not found at $mailfldr" >&2
